@@ -7,5 +7,6 @@ namespace DogGo.Models.ViewModels
         public Walker Walker { get; set; }
         public List<Walks> Walks { get; set; }
         public int WalkTime{ get; set; }
+        public string ImageUrl { get; set; }
     }
 }
