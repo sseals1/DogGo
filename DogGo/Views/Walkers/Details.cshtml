@@ -24,7 +24,7 @@
         </dd>
     </dl>
     <td>
-            <img src="@Model.Walker.ImageUrl" alt="avatar" />
+        <img src="@Model.Walker.ImageUrl" alt="avatar" />
     </td>
     <td>
 
@@ -32,10 +32,14 @@
         {
             <tr>
                 <td>
+                    @Html.DisplayNameFor(modelItem => w.Date)
                     @Html.DisplayFor(modelItem => w.Date)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => w.Owner.Name)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(modelItem => modelItem.WalkTime)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => w.Duration)
@@ -43,10 +47,10 @@
             </tr>
         }
 
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Walker.Id  }) |
-    <a asp-action="Index">Back to List</a>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Walker.Id  }) |
+        <a asp-action="Index">Back to List</a>
     </td>
     </tr>
-    
+
 
 </div>
