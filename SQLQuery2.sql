@@ -1,0 +1,1 @@
+﻿SELECT * FROM Owner o LEFT JOIN Dog d ON d.OwnerId = o.id

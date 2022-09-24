@@ -1,0 +1,48 @@
+﻿@model DogGo.Models.ViewModels.WalkersViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Walker</h4>
+    <hr />
+    <dl class="row">
+        @*<dt class = "col-sm-2">
+        @Html.DisplayNameFor(Walker => Walker.)
+        </dt>
+        <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.Id)
+        </dd>*@
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(Walker => Walker.Walker)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(Walker => Walker.Walker.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(Walker => Walker.Walker.Neighborhood)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(Walker => Walker.Walker.Neighborhood.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(Walker => Walker.Walker.ImageUrl)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(Walker => Walker.Walker.ImageUrl)
+        </dd>
+    </dl>
+    <td>
+            <img src="@Model.Walker.ImageUrl" alt="avatar" />
+    </td>
+    <td>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Walker.Id  }) |
+    <a asp-action="Index">Back to List</a>
+    </td>
+    </tr>
+    
+
+</div>

@@ -1,0 +1,75 @@
+﻿@model DogGo.Models.ViewModels.WalkersViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Walker</h1>
+
+<div>
+    <h4>Profile</h4>
+    <hr />
+    <section class="row">
+        <div>
+        <td>
+                <img src="@Model.Walker.ImageUrl" style="width:50px height:50px" />
+        </td>
+        </div>
+    
+    <div>
+        <label class="font-weight-bold">Name:</label>
+        <span>@Model.Walker.Name</span>
+    </div>
+
+   <span></span>
+
+    <div>
+        <label class="font-weight-bold">Neighborhood:</label>
+        <span>@Model.Walker.Neighborhood.Name</span>
+    </div>
+    </section>
+
+
+
+    <section>
+        <div>
+            @foreach (Walks walks in Model.Walks)
+            {
+                <span>
+                    <div>
+                        <label class="font-weight-bold">Date:</label>
+                        <span>@walks.Date</span>
+                    </div>
+
+                    <div>
+                        <label class="font-weight-bold">Client:</label>
+                        <span>@walks.Owner.Name</span>
+                    </div>
+
+
+                    <div>
+                        <label class="font-weight-bold">Duration:</label>
+                        <span>@walks.Duration min</span>
+                    </div>
+                    
+                    <div>
+                        <label class="font-weight-bold">Total Walk Time:</label>
+                        <span>@walks.TotalWalkTime</span>
+                    </div>
+
+
+                </span>
+            }
+        </div>
+    </section>
+
+
+
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Walker.Id }) |
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+
+
+                        
